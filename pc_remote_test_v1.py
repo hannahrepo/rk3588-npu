@@ -7,7 +7,7 @@ from rknn.api import RKNN
 # =================================================================
 RKNN_MODEL = "yolov5s_relu.rknn"  # The model you just generated
 IMG_PATH = "./bus.jpg"  # Ensure this image exists in current folder
-# BOARD_IP = "192.168.2.100"  # Your RK3588 board IP
+# BOARD_IP = "192.168.2.100"
 DEVICE_ID = "0123456789ABCDEF"
 TARGET_PLATFORM = "rk3588"
 
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     outputs = rknn.inference(inputs=[img])
     print("--> Inference completed successfully!")
 
-    # Step 5: Performance Evaluation (Critical for your 1st Video)
+    # Step 5: Performance Evaluation
     # This will print the execution time for each layer on the RK3588 NPU.
     print("----------------------------------------------------")
     print("PERFORMANCE EVALUATION")
@@ -64,10 +64,11 @@ if __name__ == "__main__":
     print("SDK VERSION & MEMORY PROFILING")
     print("----------------------------------------------------")
 
-    # 1. 获取 SDK 版本信息
+    # Get SDK version information
     sdk_version = rknn.get_sdk_version()
     print(f"SDK Version: {sdk_version}")
 
-    # 2. 评估模型内存占用 (Weight / Internal Memory)
-    # 这会打印出模型在 NPU 中占用的系统内存
+    # Evaluate the model memory usage (Weight / Internal Memory)
+    # This will print the system memory usage of the model on the NPU.
+
     rknn.eval_memory()
