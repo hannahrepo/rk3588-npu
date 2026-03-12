@@ -45,3 +45,20 @@ Used to perform a 16-thread concurrent stress test on the development board.
 
 **Description:**  
 Used to perform a 6-process concurrent stress test on the development board.
+
+---
+
+## 6️⃣ C++ High-Performance Zero-Copy Benchmark
+**Filename:**
+`main.cc`
+**Description:**
+A native C++ high-performance benchmark tool that implements Zero-Copy technology and multi-core affinity. It maximizes NPU throughput by using high-priority execution (RKNN_FLAG_PRIOR_HIGH) and bypassing CPU memory copy overhead, achieving the ultimate 181+ FPS on RK3588.
+
+---
+
+## 7️⃣ RK3588 Hardware Frequency Locking Script
+**Filename:**
+`fix_freq_rk3588.sh`
+**Description:**
+A shell script designed to lock the CPU, GPU, NPU, and DDR frequencies to their maximum values. It also disables CPU idle states to ensure stable and consistent NPU performance during intensive AI workloads.
+
